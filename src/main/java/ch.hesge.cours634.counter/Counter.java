@@ -2,18 +2,22 @@ package ch.hesge.cours634.counter;
 
 public class Counter implements ICounter {
 
-    @Override
-    public void inc() throws CounterException {
 
+    int v;
+    int max;
+
+    @Override
+    public <CounterException extends Throwable> void inc() throws CounterException {
+        v = v + 1;
     }
 
     @Override
-    public void add(int step) throws CounterException {
-
+    public <CounterException extends Throwable> void add(int step) throws CounterException {
+        v = step;
     }
 
     @Override
     public int getValue() {
-        return 0;
+        return v;
     }
 }
